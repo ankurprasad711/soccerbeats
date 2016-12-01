@@ -1,0 +1,18 @@
+<h1>login</h1>
+
+{{#if condition}}
+    <h3>login successfully completed</h3>
+{{else}}
+    <h3>enter correct details</h3>
+{{/if}}
+
+<form action="/login/sub" method="post">
+    <input type="email" name='email' placeholder="username/email">
+    <br><br>
+    <input type="password" name='pwd'  placeholder="password">
+    <button type="submit">login</button>
+</form>
+
+<form action="/login/signup" method="get">
+<button type="submit">signup</button>
+</form>

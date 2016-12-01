@@ -1,0 +1,100 @@
+
+.body
+{
+  width:100%;
+  height:100%;
+    background-image: url("http://www.goal.com/web/goal/2016.08.23-v1/images/layout/bgDesktop.jpg");
+    background-repeat: repeat;
+}
+.header
+{
+  width:100%;
+  background: url("http://www.goal.com/web/goal/2016.08.23-v1/images/layout/bgDesktop.jpg");
+
+}
+#color{
+  background-color: white;
+}
+.space
+{
+  width:100%;
+  height:30px;
+}
+
+.logo
+{
+  width:100%;
+  height:114px;
+ // background-color: #2aabd2;
+  background-color: transparent;
+}
+.flex
+{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.so li
+{
+  font-size: small;
+  display: inline;
+  color:white;
+  text-align: center;
+ // border-right: 1px solid #000000;
+  // margin:10px;
+  padding:10px;
+
+}
+.so li:hover
+{
+  text-decoration: none;
+}
+.code
+{
+    background-color: springgreen;
+}
+.code1{
+font-size: 22px;
+}
+.link
+{
+    color: white;
+}
+.dr
+{
+    position: relative;
+    display: inline-block;
+}
+.new{
+    width:150px;
+    height: 150px;
+     display: none;
+    position: absolute;
+    z-index: 2;
+    background-color: white;
+    border-radius: 7px;
+    margin-left:5px;
+    margin-top:2px;
+}
+.new a{
+    display: block;
+}
+.dr:hover .new{
+
+    display: flex;
+    flex-direction: column;
+}
+header{
+    width: 100%;
+}
+.widget-header {
+    border-radius: .4em .4em 0 0;
+    padding: .55em 1em;
+    position: relative;
+    text-transform: uppercase;
+    margin-bottom: 1px;
+    background: #e3e5e6;
+}
+.match-selector div{
+    display: inline-flex;
+}
