@@ -13,6 +13,7 @@ var c=false;
 router.get('/',function (req,res) {
     console.log("hello!! i am here");
      res.render('login',{ title:"login page",condition:c});
+     c=false;
 });
 
 //type a word to find

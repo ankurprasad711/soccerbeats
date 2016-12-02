@@ -25,13 +25,18 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/login', index);
 app.use('/users', users);
+app.get('/cristiano',function(req,res){
+  res.sendFile(path.join(__dirname+ '/cristiano ronaldo.html'))
+});
 
 //get home page
-app.get('/', function(req, res, next) {
+
+app.use( express.static(path.join(__dirname,'public')));
+//app.get('/', function(req, res, next) {
 //  res.render('index', { title: 'wordfinder' });
   //loading HTML file
-  res.sendFile(path.join(__dirname+ '/index.html'));
-});
+  //res.sendFile(path.join(__dirname+ '/index.html'));
+//});
 
 
 // catch 404 and forward to error handler

@@ -35,7 +35,7 @@ module.exports={
         conn.connect();
         conn.query('select * from login',function(err,rows){
            for(var row of rows){
-               if((row.username=data.email) && (row.password==data.pwd)) {
+               if((row.username == data.email) && (row.password == data.pwd)) {
                    c=true;
                    break;
                }
