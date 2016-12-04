@@ -31,8 +31,8 @@ module.exports={
 
             client.query('select * from test_table',function(err,rows){
 
-                for(let row in rows) {
-                    console.log(rows[row]);
+                for(let i in rows) {
+                    console.log(rows[i]);
                     if((rows[i].username == data.email) && (rows[i].password == data.pwd)) {
 
                         c1=true;
