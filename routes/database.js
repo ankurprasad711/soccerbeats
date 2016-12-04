@@ -26,7 +26,7 @@ module.exports={
     },
     checkdata : function(data,cb){
            console.log("what in database");
-                var c=false;
+                var c1=false;
         pg.connect(process.env.DATABASE_URL, function(err, client, done) {
 
             client.query('select * from test_table',function(err,rows,fields){
@@ -35,13 +35,14 @@ module.exports={
                     console.log(rows[i]);
                     if((rows[i].username == data.email) && (rows[i].password == data.pwd)) {
 
-                        c=true;
-                        break;
+                        c1=true;
+
                     }
+                    break;
                 }
 
             });
         });
-        cb(c);
+        cb(c1);
     }
 }
