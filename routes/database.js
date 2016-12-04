@@ -25,6 +25,7 @@ module.exports={
         });
     },
     checkdata : function(data,cb){
+           console.log("what in database");
                 var c=false;
         pg.connect(process.env.DATABASE_URL, function(err, client, done) {
              var  i;
