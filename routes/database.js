@@ -35,7 +35,7 @@ module.exports={
                 for(i=0;i<rows.length;i++)
                 {
                     todo.push(rows[i]);
-                    c1:true;
+                    c1=true;
                 }
             done();
             });
