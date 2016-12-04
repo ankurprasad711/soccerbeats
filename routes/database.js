@@ -34,7 +34,7 @@ module.exports={
 
                     var i=0;
                     todo.push(rows[i]);
-                    console.logs(todo);
+                    console.log(todo);
                     c1 = true;
                 console.log(c1);
                done();
