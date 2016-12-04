@@ -12,7 +12,7 @@ var md5=require('md5');
 var c=false;
 /* GET home page. */
 router.get('/',function (req,res) {
-    console.log("hello!! i am here");
+    console.log("hello!! i am in login");
      res.render('login',{ title:"login page",condition:c});
      c=false;
 });
@@ -29,7 +29,7 @@ router.post('/submit',function (req,res,next) {
     };
     console.log(data);
     db.addtodb(data,function (result) {
-        res.end();
+        //res.end();
     });
    res.redirect('/login')
     //res.end();
@@ -41,9 +41,11 @@ router.post('/sub',function (req,res){
         pwd:req.body.pwd,
         email:req.body.email
     }
+    console.log("in login page submussion");
     console.log(data1);
     db.checkdata(data1,function(result){
        c=result;
+        console.log(c);
         //res.end();
     });
     res.redirect('/login');
