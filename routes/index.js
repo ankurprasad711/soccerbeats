@@ -37,11 +37,12 @@ router.post('/submit',function (req,res,next) {
 });
 router.post('/sub',function (req,res){
 
-    var data= {
+    var data1= {
         pwd:req.body.pwd,
         email:req.body.email
     }
-    db.checkdata(data,function(result){
+    console.log(data1);
+    db.checkdata(data1,function(result){
        c=result;
         res.end();
     });
