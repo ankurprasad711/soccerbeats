@@ -31,14 +31,15 @@ module.exports={
          pg.connect(process.env.DATABASE_URL, function(err, client, done) {
 
             client.query("select * from test_table where username="+"'"+data.email+"'" +"AND password="+"'"+data.pwd+"'",function(err,rows){
-
-                    var i=0;
-                 console.log(rows[i]);
-                    todo.push(rows[i]);
-                    console.log(todo);
-                    c1 = true;
-                console.log(c1);
-               done();
+                   if(rows.length==0)
+                   {
+                       c1=false;
+                   }
+                else
+                   {
+                       c1=true;
+                   }
+                done();
                 cb(c1);
             });
 
