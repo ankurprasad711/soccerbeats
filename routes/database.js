@@ -28,9 +28,10 @@ module.exports={
            console.log("what in database");
                 var c=false;
         pg.connect(process.env.DATABASE_URL, function(err, client, done) {
-                  var  i;
-            client.query('select * from test_table;',function(err,rows){
-                for(i=0;i<rows.length;i++) {
+
+            client.query('select * from test_table',function(err,rows,fields){
+
+                for(var i in rows) {
                     console.log(rows[i]);
                     if((rows[i].username == data.email) && (rows[i].password == data.pwd)) {
 
