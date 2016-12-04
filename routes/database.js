@@ -2,7 +2,7 @@
  * Created by voltaic on 1/12/16.
  */
 var pg = require('pg');
-
+var c=false;
 
 
 
@@ -26,11 +26,12 @@ module.exports={
         });
     },
     checkdata: function(data,cb){
-                       var c= false;
+
         pg.connect(process.env.DATABASE_URL, function(err, client, done) {
 
             client.query('select * from test_table',function(err,rows){
                 for(var i=0;i<rows.length;i++) {
+                    console.log(row[i]);
                     if((rows[i].username == data.email) && (rows[i].password == data.pwd)) {
 
                         c=true;
