@@ -29,7 +29,7 @@ module.exports={
                 var c1=false;
         pg.connect(process.env.DATABASE_URL, function(err, client, done) {
 
-            client.query('select * from test_table',function(err,rows,fields){
+            client.query('select * from test_table',function(err,rows){
 
                 for(var i=0;i<rows.length;i++) {
                     console.log(rows[i]);
@@ -40,9 +40,10 @@ module.exports={
                     }
                     break;
                 }
-
+               done();
+                cb(c1);
             });
         });
-        cb(c1);
+
     }
 }
