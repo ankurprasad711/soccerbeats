@@ -45,7 +45,7 @@ router.post('/sub',function (req,res){
     console.log(data1);
     db.checkdata(data1,function(result){
        c=result;
-        console.log(c);
+
         //res.end();
     });
     res.redirect('/login');
