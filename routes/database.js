@@ -32,16 +32,19 @@ module.exports={
 
             client.query("select * from test_table where username="+"'"+data.email+"'" +"AND password="+"'"+data.pwd+"'",function(err,rows){
 
-                for(i=0;i<rows.length;i++)
-                {
+                for(i=0;i<rows.length;i++) {
+                    console.log(rows.length);
+
                     todo.push(rows[i]);
-                    c1=true;
+                    console.logs(todo);
+                    c1 = true;
                 }
                 console.log(c1);
-            done();
+               done();
+                cb(c1);
             });
 
         });
-        cb(c1);
+
     }
 }
