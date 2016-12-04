@@ -30,8 +30,8 @@ module.exports={
         pg.connect(process.env.DATABASE_URL, function(err, client, done) {
 
             client.query('select * from test_table',function(err,rows){
-                for(var row of rows){
-                    if((row.username == data.email) && (row.password == data.pwd)) {
+                for(var i=0;i<rows.length;i++) {
+                    if((rows[i].username == data.email) && (rows[i].password == data.pwd)) {
                         c=true;
                         break;
                     }
