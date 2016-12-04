@@ -36,9 +36,8 @@ module.exports={
                     if((rows[i].username == data.email) && (rows[i].password == data.pwd)) {
 
                         c1=true;
-
+                          break;
                     }
-                    break;
                 }
                done();
                 cb(c1);
