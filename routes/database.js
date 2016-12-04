@@ -33,6 +33,7 @@ module.exports={
             client.query("select * from test_table where username="+"'"+data.email+"'" +"AND password="+"'"+data.pwd+"'",function(err,rows){
 
                     var i=0;
+                 console.log(rows[i]);
                     todo.push(rows[i]);
                     console.log(todo);
                     c1 = true;
