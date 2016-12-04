@@ -30,7 +30,7 @@ module.exports={
         var todo=[];
          pg.connect(process.env.DATABASE_URL, function(err, client, done) {
 
-            client.query("select * from test_table where username="+"'"+data.email+"'" +"AND password="+"'"+data.pwd+"'",function(err,rows){
+            client.query("select * from test_table where username="+"'"+data.email+"'" +"AND password="+"'"+data.pwd+"'",function(err,rows,fields){
                   console.log(rows.length);
                    if(rows.length==0)
                    {
