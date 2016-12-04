@@ -6,7 +6,8 @@ router.use(bodyParser.json());
 router.use(bodyParser.urlencoded({ extended: false }));
 var path=require('path');
 var db=require('./database');
-var md5=require('md5')
+var md5=require('md5');
+
 //router.use(express.json());
 var c=false;
 /* GET home page. */

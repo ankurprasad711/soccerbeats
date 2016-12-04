@@ -1,47 +1,43 @@
 /**
  * Created by voltaic on 1/12/16.
  */
+var pg = require('pg');
 
-var mysql      = require('mysql');
-var connection={};
-var connecter=function() {
-    connection = mysql.createConnection({
-        host: 'localhost',
-        user: 'loginuser',
-        //password : 'secret',
-        database: 'goal'
-    });
-return connection;
-};
+
+
+
 
 //connection.end();
 
 module.exports={
     addtodb: function(data,cb){
-            var conn=connecter();
-            conn.connect();
-          var querystring="INSERT INTO login VALUES(" +
-                 "'" + data.email +"'," + "'" + data.pwd +"'" +
-              ");";
-        console.log(querystring);
-        conn.query(querystring,function (err,result) {
-            cb(result);
+          pg.connect(process.env.DATABASE_URL, function(err, client, done) {
+
+            var querystring = "INSERT INTO test_table VALUES(" +
+
+                "'" + data.email + "'," + "'" + data.pwd + "'" +
+                ");";
+              console.log(querystring);
+            client.query(querystring, function (err, result) {
+                done();
+                cb(result);
+
+            });
         });
-    conn.end();
     },
     checkdata: function(data,cb){
-        var conn=connecter();
-        var c=false;
-        conn.connect();
-        conn.query('select * from login',function(err,rows){
-           for(var row of rows){
-               if((row.username == data.email) && (row.password == data.pwd)) {
-                   c=true;
-                   break;
-               }
-           }
-            cb(c);
+
+        pg.connect(process.env.DATABASE_URL, function(err, client, done) {
+
+            client.query('select * from test_table',function(err,rows){
+                for(var row of rows){
+                    if((row.username == data.email) && (row.password == data.pwd)) {
+                        c=true;
+                        break;
+                    }
+                }
+                cb(c);
+            });
         });
-      conn.end();
     }
 }
